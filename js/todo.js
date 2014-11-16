@@ -47,7 +47,7 @@ todo.prototype.create = function() {
   ++index;
   var taskvalue = document.getElementsByName('task')[0].value,
   taskplace = document.getElementsByName('task')[0],
-  task = '<div class="task" id="'+index+'"><div id="taskMain" class="todoNormal" onKeydown="todo.edit(event)">'+taskvalue+'</div><button class="ok">ok</button><button class="close">&times;</button></div>';
+  task = '<div class="task" id="'+index+'"><div id="taskMain" class="todoNormal" contenteditable="false" onKeydown="todo.edit(event)">'+taskvalue+'</div><button class="ok">ok</button><button class="close">&times;</button></div>';
 
   taskplace.value = '';
   taskplace.placeholder='Add your next task';
@@ -101,6 +101,7 @@ todo.prototype.finished = function(e) {
     todo.localStorageSet();
   } else {
     thisTask.className = 'todoNormal';
+    todo.localStorageSet();
   }
 };
 
