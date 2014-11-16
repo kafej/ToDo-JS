@@ -11,7 +11,6 @@ todo.prototype.check = function() {
     if (localStorage.getItem("todo") !== '') {
       document.getElementById("tasksContainer").innerHTML = localStorage.getItem("todo");
       this.localStorageID();
-      alert(index);
     }
   } else {
     alert('Your list will not be stored !!');
@@ -22,7 +21,7 @@ todo.prototype.check = function() {
 todo.prototype.localStorageID = function() {
   element = document.getElementById("tasksContainer");
   contains = element.getElementsByClassName('task');
-  if (contains !== 0 && contains !== null) {
+  if (JSON.stringify(contains) !== '{}') {
     index = element.lastChild.id;
   }
   return index;
@@ -49,7 +48,6 @@ todo.prototype.create = function() {
   var taskvalue = document.getElementsByName('task')[0].value,
   taskplace = document.getElementsByName('task')[0],
   task = '<div class="task" id="'+index+'"><div id="taskMain" class="todoNormal" onKeydown="todo.edit(event)">'+taskvalue+'</div><button class="ok">ok</button><button class="close">&times;</button></div>';
-  alert(index);
 
   taskplace.value = '';
   taskplace.placeholder='Add your next task';

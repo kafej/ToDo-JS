@@ -11,14 +11,17 @@ body {
 	margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 10em;
+    width: 14em;
 }
-.tasksContainer {
+#tasksContainer {
 	padding: 0px;
 	margin: 0px;
+	width: 400px;
 }
 .task {
-	width: 400px;
+	max-width: 400px;
+	height: auto;
+	overflow: hidden;
 }
 #taskMain {
 	display: block;
