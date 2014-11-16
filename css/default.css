@@ -24,7 +24,7 @@ body {
 	overflow: hidden;
 }
 #taskMain {
-	display: block;
+	overflow: auto;
 	float: left;
 	width: 256px;
 	padding: 10px;
